@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Таблиці та форми в HTML</title>
+    <style>
+        /* Стилі */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+            header, footer{
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        main{
+        max-width:900px;
+        margin: 30px auto;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        /* Таблиця */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tfoot td {
+            font-weight: bold;
+            background-color: #ecf0f1;
+        }
+
+        /* Форма */
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        p {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+<body>
+<header>
+    <h1> Таблиці та форми</h1>
+</header>
+
+<main>
+    <!--Таблиця-->
+    <section>
+        <h2>Таблиця товарів</h2>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+            <tr>
+                <th>Назва товару</th>
+                <th>Кількість</th>
+                <th>Ціна</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Телефон</td>
+                <td>2</td>
+                <td>13000 грн</td>
+            </tr>
+            <tr>
+                <td>Ноутбук</td>
+                <td>1</td>
+                <td>23000 грн</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="2">Загальна сума</td>
+                <td>36000 грн</td>
+            </tr>
+            </tfoot>
+        </table>
+    </section>
+    <br><br>
+    <!--Розділ з формою-->
+    <section>
+        <h2>Форма реєстрації</h2>
+        <form action="#" method="post">
+            <label for="name">Ім'я:</label><br>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+
+            <label for="password">Пароль:</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <br><br>
+
+            <p>Стать:</p>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Чоловік</label><br>
+
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Жінка</label><br>
+            <br><br>
+
+            <p>Хобі:</p>
+            <input type="checkbox" id="sport" name="hobby" value="sport">
+            <label for="sport">Спорт</label><br>
+
+            <input type="checkbox" id="music" name="hobby" value="music">
+            <label for="music">Музика</label>
+            <br><br>
+
+            <label for="file">Завантажте файл:</label><br>
+            <input type="file" id="file" name="file">
+            <br><br>
+
+            <input type="submit" value="Надіслати">
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Навчальна HTML-сторінка</p>
+</footer>
+</body>
+</html>
