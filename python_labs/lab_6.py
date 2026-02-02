@@ -1,5 +1,3 @@
-from ctypes import HRESULT
-from lab_2 import Logger
 # Лабораторная работа №6
 # 1. Создание класса Multiplier
 class Multiplier:
