@@ -1,149 +1,185 @@
-Лабораторна робота №6 — Redux та Redux DevTools
+# Лабораторна робота №6 — Redux та Redux DevTools
 
-Тема
+## Тема
 
-Розробка React-застосунку з використанням Redux Toolkit та Redux DevTools.
+Налаштування Redux у React-проєкті та налагодження роботи застосунку за допомогою Redux DevTools.
 
-Мета роботи
+## Мета роботи
 
-Навчитися:
+Закріпити практичні навички роботи з Redux у React-проєкті: створення Store, Slice та підключення Redux до React. Навчитися використовувати Redux DevTools для перегляду дій та змін глобального стану застосунку.
 
-створювати глобальний стан застосунку за допомогою Redux Toolkit;
+## Використані технології
 
-створювати Redux slice та actions;
+- React
+- Vite
+- JavaScript
+- Redux Toolkit
+- React Redux
+- Redux DevTools
+- Git
+- GitHub
 
-підключати Redux Store до React-застосунку;
+## Структура проєкту
 
-використовувати useSelector та useDispatch;
-
-працювати з Redux DevTools для перегляду дій та стану застосунку.
-
-Використані технології
-
-React
-
-Vite
-
-JavaScript
-
-Redux Toolkit
-
-React Redux
-
-Redux DevTools
-
-Git та GitHub
-
-Структура проєкту
-
+```text
 lab-6-redux-devtools/
+├── public/
 ├── src/
-│ ├── components/
-│ │ └── Counter.jsx
-│ ├── store/
-│ │ ├── counterSlice.js
-│ │ └── store.js
-│ ├── App.jsx
-│ ├── App.css
-│ ├── index.css
-│ └── main.jsx
+│   ├── components/
+│   │   └── Counter.jsx
+│   ├── store/
+│   │   ├── counterSlice.js
+│   │   └── store.js
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+├── .gitignore
 ├── package.json
+├── package-lock.json
 ├── vite.config.js
 └── README.md
+```
 
-Реалізація Redux
+## Реалізація Redux
 
-Для роботи зі станом створено counterSlice.js.
+Для керування глобальним станом використано **Redux Toolkit**.
 
-У ньому визначено початковий стан:
+### Redux Slice
 
+Для лічильника створено `counterSlice.js` з початковим станом:
+
+```js
 const initialState = {
-count: 0,
+  count: 0,
 };
+```
 
-Також створено три дії:
+У slice реалізовано три дії:
 
-increment — збільшує значення лічильника на 1;
+- `increment` — збільшення лічильника на 1;
+- `decrement` — зменшення лічильника на 1;
+- `reset` — скидання лічильника до 0.
 
-decrement — зменшує значення лічильника на 1;
+### Redux Store
 
-reset — повертає значення до 0.
+У файлі `store.js` створено Redux Store за допомогою `configureStore`:
 
-Redux Store
-
-У файлі store.js створено Redux Store за допомогою configureStore.
-
-Store містить reducer:
-
+```js
 const store = configureStore({
-reducer: {
-counter: counterReducer,
-},
+  reducer: {
+    counter: counterReducer,
+  },
+  devTools: import.meta.env.DEV,
 });
+```
 
-Redux Store підключено до React-застосунку через компонент Provider.
+Redux Store підключено до React-застосунку за допомогою компонента `Provider`.
 
-Компонент Counter
+## Компонент Counter
 
-Компонент Counter.jsx отримує значення з Redux Store за допомогою:
+У компоненті `Counter.jsx` використано:
 
+- `useSelector` — для отримання значення `count` із Redux Store;
+- `useDispatch` — для відправлення Redux actions.
+
+Отримання поточного значення:
+
+```js
 const count = useSelector((state) => state.counter.count);
+```
 
-Для виконання дій використовується:
+Створення dispatch:
 
+```js
 const dispatch = useDispatch();
+```
 
 Кнопки виконують такі операції:
 
-− зменшення значення
+| Кнопка | Дія |
+|---|---|
+| `−` | Зменшення лічильника |
+| `+` | Збільшення лічильника |
+| `Скинути` | Повернення значення до `0` |
 
--        збільшення значення
-  Скинути повернення до 0
+## Підключення Redux до React
 
-Redux DevTools
+Redux Store підключено до React-застосунку через `Provider`:
 
-Для перевірки роботи Redux було використано розширення Redux DevTools.
+```jsx
+<Provider store={store}>
+  <App />
+</Provider>
+```
 
-Після виконання дій у застосунку в DevTools відображаються відповідні Redux actions:
+## Перевірка роботи Redux DevTools
 
+Для налагодження застосунку встановлено розширення **Redux DevTools**.
+
+Після натискання кнопок у застосунку в DevTools відображаються відповідні Redux actions:
+
+```text
 @@INIT
 counter/increment
 counter/decrement
 counter/reset
+```
 
-Також Redux DevTools дозволяє переглядати поточний стан Store та зміни стану після виконання кожної дії.
+Також було перевірено зміни глобального стану.
 
-Результат роботи
+Наприклад, після виконання дії `counter/reset` значення змінюється:
+
+```text
+count: 1 → 0
+```
+
+Таким чином, за допомогою Redux DevTools можна переглядати виконані actions та зміни стану Store.
+
+## Результат роботи
 
 У результаті створено React-застосунок із глобальним Redux-станом.
 
 Реалізовано:
 
-лічильник;
+- лічильник;
+- збільшення значення;
+- зменшення значення;
+- скидання значення до нуля;
+- підключення Redux Toolkit;
+- підключення Redux до React через `Provider`;
+- використання `useSelector` та `useDispatch`;
+- перегляд Redux actions у Redux DevTools;
+- перегляд змін глобального стану.
 
-збільшення значення;
+## Запуск проєкту
 
-зменшення значення;
+Перейти до папки лабораторної роботи:
 
-скидання значення;
+```bash
+cd web_labs/lab-6-redux-devtools
+```
 
-підключення Redux Toolkit;
+Встановити залежності:
 
-підключення Redux DevTools;
-
-перегляд Redux actions та змін стану.
-
-Запуск проєкту
-
-Відкрити термінал у папці лабораторної роботи та виконати:
-
+```bash
 npm install
+```
+
+Запустити проєкт:
+
+```bash
 npm run dev
+```
 
-Після запуску відкрити адресу, яку покаже Vite, наприклад:
+Після запуску Vite покаже адресу локального сервера, наприклад:
 
+```text
 http://localhost:5173/
+```
 
-Висновок
+## Висновок
 
-Під час виконання лабораторної роботи було створено React-застосунок із використанням Redux Toolkit. Було реалізовано глобальний стан лічильника, Redux actions та reducer. Також було підключено Redux DevTools для перегляду дій та змін стану застосунку.
+Під час виконання лабораторної роботи було створено React-застосунок із використанням Redux Toolkit. Реалізовано глобальний стан лічильника та дії `increment`, `decrement` і `reset`. Redux підключено до React за допомогою `Provider`, `useSelector` та `useDispatch`.
+
+За допомогою Redux DevTools перевірено виконання Redux actions та зміни глобального стану застосунку.
