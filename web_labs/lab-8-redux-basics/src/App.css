@@ -1,0 +1,151 @@
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app {
+  width: min(760px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 64px 0 28px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.eyebrow {
+  color: #6d5bd0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.app-header h1 {
+  margin: 12px 0;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.subtitle {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.item-card {
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgb(15 23 42 / 7%);
+}
+
+.item-card h2 {
+  margin-top: 0;
+  font-size: 1.35rem;
+}
+
+.item-form {
+  display: flex;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.item-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font: inherit;
+  outline: none;
+}
+
+.item-form input:focus {
+  border-color: #6d5bd0;
+  box-shadow: 0 0 0 3px rgb(109 91 208 / 15%);
+}
+
+button {
+  padding: 11px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #6d5bd0;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #5745b5;
+}
+
+.item-list {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.item-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+
+.delete-button {
+  flex-shrink: 0;
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.delete-button:hover {
+  background: #fecaca;
+}
+
+.empty-message {
+  padding: 18px 0;
+  color: #64748b;
+  text-align: center;
+}
+
+.item-count {
+  margin-bottom: 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.app-footer {
+  padding-top: 28px;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .app {
+    padding-top: 36px;
+  }
+
+  .item-card {
+    padding: 20px;
+  }
+
+  .item-form {
+    flex-direction: column;
+  }
+
+  .item-form button {
+    width: 100%;
+  }
+}
