@@ -1,16 +1,41 @@
-# React + Vite
+# 🌐 Мій блог — React Router Blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Навчальний проєкт, створений у межах лабораторної роботи № 9.
 
-Currently, two official plugins are available:
+## 🖼️ Попередній перегляд
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Головна сторінка блогу](./preview.png)
 
-## React Compiler
+## 📌 Опис проєкту
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Вебзастосунок блогу, розроблений за допомогою React та React Router.
 
-## Expanding the Oxlint configuration
+## 🛠️ Використані технології
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- React
+- JavaScript
+- React Router
+- Vite
+- CSS
+- JSONPlaceholder API
+
+## ⚙️ Функціональні можливості
+
+- Перегляд списку публікацій
+- Перегляд окремої публікації
+- Пошук публікацій
+- Фільтрація за авторами
+- Навігація між сторінками
+- Обробка помилки 404
+- Завантаження даних із зовнішнього API
+
+## 🚀 Запуск проєкту
+
+```bash
+npm install
+npm run dev
+```
+
+## 👩‍💻 Автор
+
+Навчальний проєкт. 2026 рік.
